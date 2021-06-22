@@ -3,9 +3,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-
-
-
 ----------------------------------------------------------------------------
 -- RGB LED intensity control Project 
 ----------------------------------------------------------------------------
@@ -183,9 +180,9 @@ if rising_edge(clk)  and change = '1' then
 					contr_vect <= x"FF";
 				else
 				end if;
+end if;
 
-
-elsif SW(3) = '1' and change = '0' and change_r = '0' and change_b = '0' then
+if SW(3) = '1' and change = '0' and change_r = '0' and change_b = '0' then
 
 --contr_vect_b <= contr_vect_b XOR contr_vect_b;
 --contr_vect_r <= contr_vect_r XOR contr_vect_r;
@@ -233,9 +230,9 @@ if rising_edge(clk)  and change_b = '1' then
 				end if;
 
 
+end if;
 
-
-elsif SW(3) = '1' and change = '0' and change_r = '0' and change_b = '0' then
+if SW(3) = '1' and change = '0' and change_r = '0' and change_b = '0' then
 
 contr_vect_b <= contr_vect_b XOR contr_vect_b;
 --contr_vect_r <= contr_vect_r XOR contr_vect_r;
@@ -280,9 +277,9 @@ if rising_edge(clk)  and change_r = '1' then
 				end if;
 
 
+end if;
 
-
-elsif SW(3) = '1' and change = '0' and change_r = '0' and change_b = '0' then
+if SW(3) = '1' and change = '0' and change_r = '0' and change_b = '0' then
 
 --contr_vect_b <= contr_vect_b XOR contr_vect_b;
 contr_vect_r <= contr_vect_r XOR contr_vect_r;
